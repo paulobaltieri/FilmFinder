@@ -2,8 +2,9 @@ let form = document.querySelector('.form')
 let msg = document.querySelector('.msgInfo')
 let msgUsername = document.querySelector('.msgValidacaoUsername')
 let msgPassword = document.querySelector('.msgValidacaoPassword')
+var msgAlert = document.querySelector('.notification')
 
-let regex = /^[a-zA-Z0-9]{5,}$/
+let regex = /^['a-zA-Z0-9']{5,}$/
 
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -14,18 +15,22 @@ form.addEventListener('submit', event => {
     let validarPass = regex.test(password)
 
     if (validaUser && validarPass) {
-        msg.textContent = "Logando..."
+        msgAlert.textContent = "Logando..."
         return
     }
-    msg.textContent = "Usuario ou senha invalidos"
 })
 
 password.addEventListener('keyup', event => {
-    let validacao = event.target.value
+    let inputPass = event.target.value
+    let validacao = regex.test(inputPass)
+    console.log(validacao)
     if (validacao) {
-        console.log('teste')
+        msgAlert.classList.replace('is-danger', 'is-link')
+        msgAlert.classList.remove('hidden')
+        msgAlert.innerHTML = "usuario ou senha <a>VALIDO</a>."
+        console.log(validacao)
         return
     }
-    msgUsername.textContent = "O campo deve possuir mais de 5 caracateres"
-    console.log(regex.test(validacao))
+    msgAlert.classList.remove('hidden')
+    msgAlert.textContent = 'usuario ou senha <a>INVALIDO</a>.'
 })

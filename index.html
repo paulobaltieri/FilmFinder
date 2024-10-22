@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
@@ -12,12 +13,13 @@
     <div class="formulario">
         <form class="form">
             <input type="text" class="input is-hovered" id="username" placeholder="insert your username">
-            <label class="msgValidacaoUsername">1</label>
             <input type="password" class="input is-hovered" id="password" placeholder="inser your password">
-            <label class="msgValidacaoPassword">1</label>
             <button class="button is-warning">ENTRAR</button>
         </form>
-        <label class="msgInfo">Mensagem de alerta</label>
+        <div class="statusMessage">
+            <div class="notification is-danger is-light hidden">
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

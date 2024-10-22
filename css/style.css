@@ -1,0 +1,17 @@
+.msgValidacaoPassword{
+    margin: auto;
+    padding: 1px;
+    padding-bottom: 30px;
+}
+
+.hidden{
+    display: none;
+}
+.visible{
+    display: block;
+    text-align: center;
+
+}
+.statusMessage{
+    text-align: center;
+}
