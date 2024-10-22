@@ -1,7 +1,7 @@
 let form = document.querySelector('.form')
 let msg = document.querySelector('.msgInfo')
 
-let regex = /^['a-zA-Z0-9']{5,}$/
+let regex = /^[a-zA-Z0-9]{5,}$/
 
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -18,7 +18,7 @@ form.addEventListener('submit', event => {
     msg.textContent = "Usuario ou senha invalidos"
 })
 
-form.addEventListener('keyup', event => {
-    let validacao = regex.test(event.target.password)
-    console.log(validacao + " password")
+password.addEventListener('keyup', event => {
+    let validacao = event.target.value
+    console.log(regex.test(validacao))
 })
