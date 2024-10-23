@@ -12,8 +12,9 @@ body {
   margin: auto;
   margin-top: 100v;
   width: 350px;
-  height: 280px;
+  height: 450px;
   padding: 10px;
+  border-radius: 8px;
 }
 /* .avatar{
   background-color: red;
