@@ -6,15 +6,23 @@ var msgAlert = document.querySelector('.notification')
 
 let regex = /^[a-zA-Z0-9]{5,}$/
 
+function operacao(username, password) {
+    let validaUser = regex.test(username)
+    let validarPass = regex.test(password)
+    return {
+        validaUser: validaUser,
+        validarPass: validarPass
+    }
+}
+
 form.addEventListener('submit', event => {
     event.preventDefault()
     let username = event.target.username.value
     let password = event.target.password.value
 
-    let validaUser = regex.test(username)
-    let validarPass = regex.test(password)
+    let valida = operacao(username, password)
 
-    if (validaUser && validarPass) {
+    if (valida.validaUser && valida.validarPass) {
         msgAlert.textContent = "Logando..."
         window.location.href = 'pages/home.html'
         return
