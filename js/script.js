@@ -10,8 +10,8 @@ function operacao(username, password) {
     let validaUser = regex.test(username)
     let validarPass = regex.test(password)
     return {
-        validaUser: validaUser,
-        validarPass: validarPass
+        isUser: validaUser,
+        isPass: validarPass
     }
 }
 
@@ -22,7 +22,7 @@ form.addEventListener('submit', event => {
 
     let valida = operacao(username, password)
 
-    if (valida.validaUser && valida.validarPass) {
+    if (valida.isUser && valida.isPass) {
         msgAlert.textContent = "Logando..."
         window.location.href = 'pages/home.html'
         return
@@ -30,12 +30,11 @@ form.addEventListener('submit', event => {
 })
 password.addEventListener('keyup', event => {
     let inputPass = event.target.value
-    let validacao = regex.test(inputPass)
-    console.log(validacao)
-    if (validacao) {
+    let validacao = operacao("", inputPass)
+    if (validacao.isPass) {
         msgAlert.classList.replace('is-danger', 'is-link')
         msgAlert.classList.remove('hidden')
-        msgAlert.innerHTML = "usuario ou senha <a>VALIDO</a>."
+        msgAlert.innerHTML = "Senha <a>VALIDA</a>."
         console.log(validacao)
         return
     }
