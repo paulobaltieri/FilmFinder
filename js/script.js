@@ -15,6 +15,12 @@ function operacao(username, password) {
     }
 }
 
+function infomacao(class1, class2) {
+    msgAlert.classList.replace(class1, class2)
+    msgAlert.classList.remove('hidden')
+    return
+}
+
 form.addEventListener('submit', event => {
     event.preventDefault()
     let username = event.target.username.value
@@ -28,16 +34,30 @@ form.addEventListener('submit', event => {
         return
     }
 })
+
+username.addEventListener('keyup', event => {
+    let inputUser = event.target.value
+    let validacao = operacao(inputUser, '')
+    if (validacao.isUser) {
+
+        console.log(inputUser + ' Testando')
+        return
+    }
+
+})
+
 password.addEventListener('keyup', event => {
     let inputPass = event.target.value
     let validacao = operacao("", inputPass)
     if (validacao.isPass) {
-        msgAlert.classList.replace('is-danger', 'is-link')
-        msgAlert.classList.remove('hidden')
+        infomacao('is-danger', 'is-link')
         msgAlert.innerHTML = "Senha <a>VALIDA</a>."
         console.log(validacao)
         return
     }
+
+    infomacao('is-link', 'is-danger')
     msgAlert.classList.remove('hidden')
     msgAlert.innerHTML = 'usuario ou senha <a>INVALIDO</a>.'
 })
+
