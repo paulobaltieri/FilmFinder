@@ -19,6 +19,17 @@ function infomacao(msg1, msg2) {
     return
 }
 
+function inputErrorUser(value1, value2) {
+    let inputUser = username.classList.replace(value1, value2)
+    return inputUser
+}
+
+function inputErrorPass(value1, value2) {
+    let inputPass = password.classList.replace(value1, value2)
+    return inputPass
+}
+
+
 form.addEventListener('submit', event => {
     event.preventDefault()
     let username = event.target.username.value
@@ -37,12 +48,13 @@ username.addEventListener('keyup', event => {
     let validacao = operacao(inputUser, '')
     if (validacao.isUser) {
         infomacao('is-danger', 'is-link')
-        msgAlert.innerHTML = "Usuario <a>VALIDO</a>"
-        console.log(inputUser + ' Testando')
+        inputErrorUser('is-danger', 'is-hovered')
+        msgAlert.innerHTML = "Usuario <b>VALIDO</b>"
         return
     }
     infomacao('is-link', 'is-danger')
-    msgAlert.innerHTML = "Usuario <a>INVALIDO</a>"
+    inputErrorUser('is-hovered', 'is-danger')
+    msgAlert.innerHTML = "Usuario <b>INVALIDO</b>"
 })
 
 password.addEventListener('keyup', event => {
@@ -50,10 +62,12 @@ password.addEventListener('keyup', event => {
     let validacao = operacao("", inputPass)
     if (validacao.isPass) {
         infomacao('is-danger', 'is-link')
-        msgAlert.innerHTML = "Senha <a>VALIDA</a>."
+        inputErrorPass('is-danger', 'is-hovered')
+        msgAlert.innerHTML = "Senha <b>VALIDA</b>"
         return
     }
+    inputErrorPass('is-hovered', 'is-danger')
     infomacao('is-link', 'is-danger')
-    msgAlert.innerHTML = "Senha <a>INVALIDO</a>."
+    msgAlert.innerHTML = "Senha <b>INVALIDA</b>"
 })
 
