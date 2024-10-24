@@ -29,6 +29,11 @@ function inputErrorPass(value1, value2) {
     return inputPass
 }
 
+function duracao() {
+    setTimeout(() => {
+        msgAlert.classList.add('hidden')
+    }, 4000)
+}
 
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -50,11 +55,13 @@ username.addEventListener('keyup', event => {
         infomacao('is-danger', 'is-link')
         inputErrorUser('is-danger', 'is-hovered')
         msgAlert.innerHTML = "Usuario <b>VALIDO</b>"
+        duracao()
         return
     }
     infomacao('is-link', 'is-danger')
     inputErrorUser('is-hovered', 'is-danger')
     msgAlert.innerHTML = "Usuario <b>INVALIDO</b>"
+    duracao()
 })
 
 password.addEventListener('keyup', event => {
@@ -64,10 +71,12 @@ password.addEventListener('keyup', event => {
         infomacao('is-danger', 'is-link')
         inputErrorPass('is-danger', 'is-hovered')
         msgAlert.innerHTML = "Senha <b>VALIDA</b>"
+        duracao()
         return
     }
     inputErrorPass('is-hovered', 'is-danger')
     infomacao('is-link', 'is-danger')
     msgAlert.innerHTML = "Senha <b>INVALIDA</b>"
+    duracao()
 })
 
