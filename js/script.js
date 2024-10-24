@@ -30,7 +30,10 @@ function inputErrorPass(value1, value2) {
 }
 
 function duracao() {
-    setTimeout(() => {
+    if (duracao.timeoutID) {
+        clearTimeout(duracao.timeoutID)
+    }
+    duracao.timeoutID = setTimeout(() => {
         msgAlert.classList.add('hidden')
     }, 4000)
 }
