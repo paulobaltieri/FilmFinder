@@ -50,8 +50,9 @@ form.addEventListener('submit', event => {
         setTimeout(() => {
             console.log('Operando')
             window.location.href = 'pages/home.html'
-        }, 3000)
+        }, 4000)
         msgAlert.textContent = "Logando..."
+        duracao()
         return
     }
 })
