@@ -1,6 +1,7 @@
 let form = document.querySelector('.form')
 let msg = document.querySelector('.msgInfo')
-var msgAlert = document.querySelector('.notification')
+let msgAlert = document.querySelector('.notification')
+let button = document.querySelector('.is-warning')
 
 let regex = /^[a-zA-Z0-9]{5,}$/
 
@@ -45,8 +46,12 @@ form.addEventListener('submit', event => {
     let valida = operacao(username, password)
 
     if (valida.isUser && valida.isPass) {
+        button.classList.add('is-loading')
+        setTimeout(() => {
+            console.log('Operando')
+            window.location.href = 'pages/home.html'
+        }, 3000)
         msgAlert.textContent = "Logando..."
-        window.location.href = 'pages/home.html'
         return
     }
 })
