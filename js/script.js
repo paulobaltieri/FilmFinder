@@ -57,13 +57,13 @@ username.addEventListener('keyup', event => {
     if (validacao.isUser) {
         infomacao('is-danger', 'is-link')
         inputErrorUser('is-danger', 'is-hovered')
-        msgAlert.innerHTML = "Usuario <b>VALIDO</b>"
+        msgAlert.innerHTML = "Nome de usuario <b>VALIDO</b>"
         duracao()
         return
     }
     infomacao('is-link', 'is-danger')
     inputErrorUser('is-hovered', 'is-danger')
-    msgAlert.innerHTML = "Usuario <b>INVALIDO</b>"
+    msgAlert.innerHTML = "Nome de usuario muito <b>CURTO</b>"
     duracao()
 })
 
@@ -79,7 +79,7 @@ password.addEventListener('keyup', event => {
     }
     inputErrorPass('is-hovered', 'is-danger')
     infomacao('is-link', 'is-danger')
-    msgAlert.innerHTML = "Senha <b>INVALIDA</b>"
+    msgAlert.innerHTML = "Senha muito<b>CURTA</b>"
     duracao()
 })
 
