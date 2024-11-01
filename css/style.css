@@ -38,7 +38,6 @@
 }
 
 .card {
-
     box-shadow: red;
     width: 240px;
     height: 390px;
@@ -50,4 +49,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     /* Adiciona uma transição suave */
+}
+
+/* Modal */
+.modal-card {
+    color: white;
+    width: 300px;
+    margin: auto;
+
+}
+
+.buttons {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-card-title {
+    text-align: center;
 }
