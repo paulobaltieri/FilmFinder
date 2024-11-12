@@ -68,3 +68,8 @@
 .modal-card-title {
     text-align: center;
 }
+.navbar-item.active {
+    color: #3498db; /* Altere para a cor desejada */
+    font-weight: bold; /* Deixe o texto em negrito, se desejar */
+    border-bottom: 2px solid #3498db; /* Exemplo de destaque na aba ativa */
+}

@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/css/carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <title>Home</title>
+    <title>Lançamentos</title>
 </head>
 
 <body>
+
     <!-- inicio Navbar -->
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -26,11 +27,14 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item active" href="#">
+                <a class="navbar-item" href="home.html">
+                    <!--                     <span class="iconHome">
+                    <i class="fa-solid fa-house"></i>
+                </span> -->
                     <span>Inicio</span>
                 </a>
 
-                <a class="navbar-item" href="lancamentos.html">
+                <a class="navbar-item active" href="#">
                     Lançamentos
                 </a>
             </div>
@@ -48,27 +52,11 @@
             </div>
     </nav>
     <!-- Fim Navbar -->
-    <div class="swiper mySwiper" id="teste123">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="/img/img1.jpg" alt="Slide 1">
-            </div>
-            <div class="swiper-slide">
-                <img src="/img/img2.jpg" alt="Slide 2">
-            </div>
-            <div class="swiper-slide">
-                <img src="/img/img3.jpg" alt="Slide 3">
-            </div>
-        </div>
-        <!-- Controles do Carousel -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
+
 
     <!-- Inicio Cards -->
     <div class="container">
-        <h1 class="titleCard">Lançamentos</h1>
+        <h1 class="titleCard">Lançamentos YEAR</h1>
 
         <div class="columns">
             <div class="column">
@@ -112,7 +100,94 @@
                 </div>
             </div>
         </div>
+        <!-- Second Columm -->
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie1.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 1</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie2.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 2</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie3.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 3</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie6.jpeg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 4</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Third Columm -->
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie1.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 1</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie2.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 2</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie3.jpg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 3</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/img/movie6.jpeg" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title is-4">Movie 4</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!-- Fim Cards -->
 
     <!-- Modal start -->
@@ -132,10 +207,6 @@
     </div>
 
     <!-- Modal start -->
-
-
-
-
 
     <!-- Inicio do Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
