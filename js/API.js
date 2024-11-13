@@ -1,24 +1,26 @@
+const movieInfo = {
+    movie01: {
+        title: document.querySelector('.titleMovie1'),
+        img: document.querySelector('.moviePoster1')
+    },
+    movie02: {
+        title: document.querySelector('.titleMovie2'),
+        img: document.querySelector('.moviePoster2')
 
-let movieInfo1 = document.querySelector('.titleMovie1')
-let moviePoster1 = document.querySelector('.moviePoster1')
-let movieInfo2 = document.querySelector('.titleMovie2')
-let moviePoster2 = document.querySelector('.moviePoster2')
-let movieInfo3 = document.querySelector('.titleMovie3')
-let moviePoster3 = document.querySelector('.moviePoster3')
-let movieInfo4 = document.querySelector('.titleMovie4')
-let moviePoster4 = document.querySelector('.moviePoster4')
+    }
+}
 
-function movieNames(field, title, img) {
-    const url = `https://www.omdbapi.com/?t=${title}&apikey=b96734e4`
+const movieData = (titleElement, imgElement, movieName) => {
+    const url = `https://www.omdbapi.com/?t=${movieName}&apikey=b96734e4`
+
     fetch(url)
         .then(res => res.json())
-        .then(dados => {
-            console.log("Titulo", dados.Title)
-            field.innerHTML = dados.Title
-            console.log("Pôster", dados.Poster)
-            img.src = dados.Poster
-
+        .then(data => {
+            titleElement.innerHTML = data.Title
+            imgElement.src = data.Poster
         })
-        .catch(error => console.log('ERRO:', error))
+        .catch(error => ('Error', error))
 }
-movieNames(movieInfo1, 'Deadpool', moviePoster1)
+
+movieData(movieInfo.movie01.title, movieInfo.movie01.img, "Deadpool")
+movieData(movieInfo.movie02.title, movieInfo.movie02.img, "Joker")
