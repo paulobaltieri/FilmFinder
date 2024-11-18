@@ -1,33 +1,3 @@
-.msgValidacaoPassword {
-    margin: auto;
-    padding: 1px;
-    padding-bottom: 30px;
-}
-
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-    text-align: center;
-
-}
-
-.statusMessage {
-    text-align: center;
-}
-
-.imgPerson {
-    margin: auto;
-    padding: 10px;
-    width: 180px;
-}
-
-.iconHome {
-    margin-right: 2vh;
-}
-
 .titleCard {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -40,17 +10,16 @@
 .card {
     box-shadow: red;
     width: 240px;
-    height: 390px;
+    height:400px;
     margin: auto;
     margin-top: 20px;
-    padding: 20px;
+    padding-top: 20px;
     display: block;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     /* Adiciona uma transição suave */
 }
-
 /* Modal */
 .modal-card {
     color: white;
@@ -69,7 +38,8 @@
     text-align: center;
 }
 .navbar-item.active {
+    background-color: #ffb70f;
     color: #3498db; /* Altere para a cor desejada */
     font-weight: bold; /* Deixe o texto em negrito, se desejar */
-    border-bottom: 2px solid #3498db; /* Exemplo de destaque na aba ativa */
+    border-bottom: 2px solid #ffb70f; /* Exemplo de destaque na aba ativa */
 }
