@@ -20,6 +20,8 @@ const getData = async (title, img, name, imdb) => {
             title.innerHTML = "Não encontrado"
             img.src = "/img/notfound.png"
             imdb.innerHTML = "Indisponivel"
+
+            throw new Error("Filme não encontrado")
         }
         console.log(data)
 
