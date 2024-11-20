@@ -43,3 +43,6 @@
     font-weight: bold; /* Deixe o texto em negrito, se desejar */
     border-bottom: 2px solid #ffb70f; /* Exemplo de destaque na aba ativa */
 }
+.notas{
+    font-size: 13px;
+}

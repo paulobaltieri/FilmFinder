@@ -1,30 +1,35 @@
+const movieName = "Deadpool3"
+const APIkey = "b96734e4"
 const movies = {
     movie01: {
         title: document.querySelector('.titleMovie1'),
-        img: document.querySelector('.moviePoster1')
+        img: document.querySelector('.moviePoster1'),
+        rating: document.querySelector('.imdbRating')
     }
 }
 
-const getData = async (title, img, name) => {
-    const response = await fetch(`https://www.omdbapi.com/?t=${name}&apikey=b96734e4`)
-
+const getData = async (title, img, name, imdb) => {
+    const response = await fetch(`https://www.omdbapi.com/?t=${name}&apikey=${APIkey}`)
     try {
-        const data = await response.json()
-
         if (response.status !== 200) {
-            throw new Error("Dados não encontrados")
+            throw new Error("Não foi possivel realizar a requisição")
         }
 
+        const data = await response.json()
         if (data.Response === "False") {
-            throw new Error("Erro ao obter dados ")
+            title.innerHTML = "Não encontrado"
+            img.src = "/img/notfound.png"
+            imdb.innerHTML = "Indisponivel"
         }
+        console.log(data)
 
         title.innerHTML = data.Title
         img.src = data.Poster
+        imdb.innerHTML = data.imdbRating
+
 
     } catch (erro) {
-        console.log("Mensagem", erro.message)
+        console.log("Descrição do erro: ", erro.message)
     }
 }
-
-getData(movies.movie01.title, movies.movie01.img, "Deadpool")
+getData(movies.movie01.title, movies.movie01.img, movieName, movies.movie01.rating)
