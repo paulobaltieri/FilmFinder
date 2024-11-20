@@ -1,10 +1,25 @@
-const movieName = "Deadpool3"
+const movieName = ["Deadpool", "Ong bak", "King Kong", "IT"]
 const APIkey = "b96734e4"
 const movies = {
     movie01: {
         title: document.querySelector('.titleMovie1'),
         img: document.querySelector('.moviePoster1'),
         rating: document.querySelector('.imdbRating')
+    },
+    movie02: {
+        title: document.querySelector('.titleMovie2'),
+        img: document.querySelector('.moviePoster2'),
+        rating: document.querySelector('.imdbRating2')
+    },
+    movie03: {
+        title: document.querySelector('.titleMovie3'),
+        img: document.querySelector('.moviePoster3'),
+        rating: document.querySelector('.imdbRating3')
+    },
+    movie04: {
+        title: document.querySelector('.titleMovie4'),
+        img: document.querySelector('.moviePoster4'),
+        rating: document.querySelector('.imdbRating4')
     }
 }
 
@@ -34,4 +49,8 @@ const getData = async (title, img, name, imdb) => {
         console.log("Descrição do erro: ", erro.message)
     }
 }
-getData(movies.movie01.title, movies.movie01.img, movieName, movies.movie01.rating)
+
+movieName.forEach((movieNames, index) => {
+    const listMovie = movies[`movie0${index + 1}`]
+    getData(listMovie.title, listMovie.img, movieNames, listMovie.rating)
+});
