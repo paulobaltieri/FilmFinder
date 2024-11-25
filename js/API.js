@@ -1,56 +1,46 @@
-const movieName = ["Deadpool", "Ong bak", "King Kong", "IT"]
-const APIkey = "b96734e4"
-const movies = {
-    movie01: {
-        title: document.querySelector('.titleMovie1'),
-        img: document.querySelector('.moviePoster1'),
-        rating: document.querySelector('.imdbRating')
-    },
-    movie02: {
-        title: document.querySelector('.titleMovie2'),
-        img: document.querySelector('.moviePoster2'),
-        rating: document.querySelector('.imdbRating2')
-    },
-    movie03: {
-        title: document.querySelector('.titleMovie3'),
-        img: document.querySelector('.moviePoster3'),
-        rating: document.querySelector('.imdbRating3')
-    },
-    movie04: {
-        title: document.querySelector('.titleMovie4'),
-        img: document.querySelector('.moviePoster4'),
-        rating: document.querySelector('.imdbRating4')
+let movie = ["Deadpool", "Movie", "Batman", "IT"]
+let apiKey = "b96734e4"
+
+class Movies {
+    constructor(titleElement, imgElement) {
+        this.titleElement = document.querySelector(titleElement)
+        this.imgElement = document.querySelector(imgElement)
     }
+    update(data) {
+        this.titleElement.innerHTML = data.Title
+        this.imgElement.src = data.Poster
+    }
+
 }
 
-const getData = async (title, img, name, imdb) => {
-    const response = await fetch(`https://www.omdbapi.com/?t=${name}&apikey=${APIkey}`)
+const getData = async (name, instanceMovie) => {
     try {
+        const response = await fetch(`https://www.omdbapi.com/?t=${name}&apikey=${apiKey}`)
+        console.log(response)
         if (response.status !== 200) {
-            throw new Error("Não foi possivel realizar a requisição")
+            throw new Error("Falha ao fazer requisição")
         }
-
         const data = await response.json()
         if (data.Response === "False") {
-            title.innerHTML = "Não encontrado"
-            img.src = "/img/notfound.png"
-            imdb.innerHTML = "Indisponivel"
-
-            throw new Error("Filme não encontrado")
+            throw new Erro("Filme não encontrado")
         }
-        console.log(data)
 
-        title.innerHTML = data.Title
-        img.src = data.Poster
-        imdb.innerHTML = data.imdbRating
+        instanceMovie.update(data)
 
 
     } catch (erro) {
-        console.log("Descrição do erro: ", erro.message)
+        console.log("Tipo do erro: ", erro.message)
     }
 }
 
-movieName.forEach((movieNames, index) => {
-    const listMovie = movies[`movie0${index + 1}`]
-    getData(listMovie.title, listMovie.img, movieNames, listMovie.rating)
+let listMovie = [
+    new Movies(".movieTitle1", ".moviePoster1"),
+    new Movies(".movieTitle2", ".moviePoster2"),
+    new Movies(".movieTitle3", ".moviePoster3"),
+    new Movies(".movieTitle1", ".moviePoster4"),
+]
+
+listMovie.forEach((movieInstance, index) => {
+    getData(movie[index], movieInstance)
 });
+
