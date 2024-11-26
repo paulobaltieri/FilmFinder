@@ -37,7 +37,7 @@ let listMovie = [
     new Movies(".movieTitle1", ".moviePoster1"),
     new Movies(".movieTitle2", ".moviePoster2"),
     new Movies(".movieTitle3", ".moviePoster3"),
-    new Movies(".movieTitle1", ".moviePoster4"),
+    new Movies(".movieTitle4", ".moviePoster4"),
 ]
 
 listMovie.forEach((movieInstance, index) => {
